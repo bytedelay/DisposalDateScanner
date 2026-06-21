@@ -1,4 +1,5 @@
-![recycle](https://www.readmecodegen.com/api/social-icon?name=recycle&size=76&animation=fade) # Disposal Scanner and Reminder Bot Whatsapp
+![recycle](https://www.readmecodegen.com/api/social-icon?name=recycle&size=76&animation=fade) 
+# Disposal Scanner and Reminder Bot Whatsapp
 
 ## Completed
 - [X] Scans the default provided image set and works accordingly as is.
