@@ -30,6 +30,8 @@ else:
 
 
 ########################################################################################
+30/06/2026 - AppId,Token and secret added - phone number not added yet
+########################################################################################
 
 pip install pywa
 
@@ -39,9 +41,9 @@ from pywa import WhatsApp, filters, types
 
 wa = WhatsApp(
     phone_id="YOUR_WHATSAPP_PHONE_NUMBER_ID", # From Meta Developer Console
-    token="YOUR_PERMANENT_ACCESS_TOKEN",      # Your API Token
-    app_id=123456789,                        # Your Meta App ID
-    app_secret="your_app_secret_here",
+    token="a934f82bc64aa82a90f37809d8b9a574",     
+    app_id=1019227147508111,                  
+    app_secret="6178681e6c6ffde3368c4b69b1995236",
     
     # Connecting your Webhook configuration
     callback_url="https://xxxx-xxxx.ngrok-free.app/webhook", # Paste your ngrok URL here
