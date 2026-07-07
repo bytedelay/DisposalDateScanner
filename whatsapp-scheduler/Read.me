@@ -1,0 +1,20 @@
+<-------------------------------------------------->
+Step 1: Create Your Project Directory & Initialize
+mkdir whatsapp-scheduler
+cd whatsapp-scheduler
+npm init -y
+<-------------------------------------------------->
+Step 2: Install the Libraries
+npm install whatsapp-web.js qrcode-terminal node-cron
+<-------------------------------------------------->
+Step 3: Find Your Hidden WhatsApp Group ID
+Run this file by typing this into your terminal: node find-id.js
+A large pixelated QR code will appear. Open WhatsApp on your phone ➔ Settings / Three Dots ➔ Linked Devices ➔ Link a Device ➔ Scan the terminal screen.
+Once it loads, look at the text output, find your target group name, and copy the long ID string ending in @g.us. Save it somewhere safe.
+<-------------------------------------------------->
+Step 4: Write the Final Scheduler Script
+Run it natively by executing: node index.js
+<-------------------------------------------------->
+Step 5: Keeping It Running 24/7 (Deployment)
+If you run node index.js on your laptop, it works perfectly—as long as your laptop stays open, awake, and connected to the internet. The second your computer goes to sleep, the schedule stops.
+To make it a true "set-and-forget" background bot, you have two choices to finalize your deployment:
