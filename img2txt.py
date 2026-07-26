@@ -1,10 +1,15 @@
+import os
 import cv2
 import numpy as np
 import calendar
 from datetime import date
 import pandas as pd
 
-img = cv2.imread("trash.webp")
+
+for folder in ["resources/img", "resources/csv"]:
+    os.makedirs(folder, exist_ok=True)
+
+img = cv2.imread("resources/img/trash.webp")
 
 if img is None:
     raise ValueError("Image could not be read")
@@ -152,3 +157,5 @@ print(df)
 
 df["reminder_day_before"] = pd.to_datetime(df["collection_date"]) - pd.Timedelta(days=1)
 df["reminder_same_day"] = pd.to_datetime(df["collection_date"])
+
+df.to_csv("resources/csv/bin_collection_dates.csv",index=False)
