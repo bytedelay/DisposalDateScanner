@@ -8,7 +8,7 @@
 
 ## Functionalities to be Added
 
-- [ ] Integrate Whatsapp or similar API [utsav-3008] (https://github.com/utsav-3008)
-- [ ] Push notification into the group [utsav-3008] (https://github.com/utsav-3008)
-- [ ] Generalize for any image provided with any colour-channel combination [bytedelay] (https://github.com/bytedelay)
+- [ ] Integrate Whatsapp or similar API [utsav-3008](https://github.com/utsav-3008)
+- [ ] Push notification into the group [utsav-3008](https://github.com/utsav-3008)
+- [ ] Generalize for any image provided with any colour-channel combination [bytedelay](https://github.com/bytedelay)
 - [ ] AI Integration for the sake that we did masters in AI? ;_;
