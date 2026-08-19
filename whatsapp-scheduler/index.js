@@ -23,10 +23,10 @@ client.on('qr', (qr) => {
 
 // Helper function to build dynamic message based on color/type
 function getBinMessage(boxColour, binType) {
-    switch (boxColour?.toLowerCase().trim()) {
-        case 'cyan':
+    switch (binType?.toLowerCase().trim()) {
+        case 'recycling_compost':
             return "Remove the recycling compost bin ♻️";
-        case 'black':
+        case 'waste':
             return "Remove the wet waste bin 🗑️";
         default:
             return `Reminder: Remove the ${boxColour || ''} (${binType || 'waste'}) bin`;
