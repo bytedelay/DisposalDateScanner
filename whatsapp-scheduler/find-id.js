@@ -1,3 +1,8 @@
+/*
+
+THIS CODE IS ONLY REQUIRED IF YOU DO NOT KNOW YOUR GROUP ID
+ELSE THIS CODE IS AND WILL BE REDUNDANT
+
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const cron = require('node-cron');
@@ -92,4 +97,4 @@ client.on('ready', () => {
     });
 });
 
-client.initialize();
+client.initialize();*/
