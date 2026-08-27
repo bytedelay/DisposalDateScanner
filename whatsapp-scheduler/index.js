@@ -10,8 +10,13 @@ const { isToday, parseISO } = require('date-fns');
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium',
         handleSIGINT: false,
-        args: ['--no-sandbox']
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage'
+        ]
     }
 });
 
