@@ -1,9 +1,13 @@
 FROM node:20-slim
 
-# Install Python 3, pip, and Chromium dependencies required by Puppeteer
+# Install system dependencies, Python 3, OpenCV, and Chromium
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
+    python3-opencv \
+    libgl1 \
+    libglib2.0-0 \
+    tesseract-ocr \
     chromium \
     fonts-liberation \
     libappindicator3-1 \
@@ -13,25 +17,23 @@ RUN apt-get update && apt-get install -y \
     libnspr4 \
     libnss3 \
     xdg-utils \
+    dos2unix \
     && rm -rf /var/lib/apt-get/lists/*
 
-# Configure Puppeteer environment to use system Chromium
+# Install required Python packages
+RUN pip3 install --break-system-packages pandas numpy pillow pytesseract opencv-python
+
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 
-WORKDIR /app
+WORKDIR /DisposalDateScanner-main
 
-# Copy application files into the image
 COPY . .
 
-# Install Node.js dependencies in the subdirectory
+# Install Node.js dependencies
 RUN cd whatsapp-scheduler && npm install
 
-# Install Python dependencies (uncomment if using a requirements.txt)
-# RUN if [ -f "requirements.txt" ]; then pip3 install -r requirements.txt --break-system-packages; fi
+# Convert line endings and make executable
+RUN dos2unix run.sh && chmod +x run.sh
 
-# Grant execution rights to your runner script
-RUN chmod +x run.sh
-
-# Set entry point script
 ENTRYPOINT ["./run.sh"]
