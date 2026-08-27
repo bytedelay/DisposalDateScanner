@@ -13,7 +13,7 @@
 - [ ] Generalize for any image provided with any colour-channel combination [bytedelay](https://github.com/bytedelay)
 - [ ] AI Integration for the sake that we did masters in AI? ;_;
 
-## How to Run the docker image
+## How to Run the docker image (Navigate to the app folder where run.sh)
 
 - [ ] docker rm app-container
 - [ ] docker build --no-cache -t multi-app-runner .
