@@ -12,3 +12,9 @@
 - [ ] Push notification into the group [utsav-3008](https://github.com/utsav-3008)
 - [ ] Generalize for any image provided with any colour-channel combination [bytedelay](https://github.com/bytedelay)
 - [ ] AI Integration for the sake that we did masters in AI? ;_;
+
+## How to Run the docker image (Navigate to the app folder where run.sh)
+
+- [ ] docker rm app-container
+- [ ] docker build --no-cache -t multi-app-runner .
+- [ ] docker run -it --name app-container multi-app-runner

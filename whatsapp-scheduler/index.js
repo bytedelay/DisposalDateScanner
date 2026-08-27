@@ -10,8 +10,13 @@ const { isToday, parseISO } = require('date-fns');
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/chromium',
         handleSIGINT: false,
-        args: ['--no-sandbox']
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-dev-shm-usage'
+        ]
     }
 });
 
@@ -35,7 +40,7 @@ function getBinMessage(boxColour, binType) {
 
 // Function to schedule reminders from CSV
 function scheduleBinReminders(client, targetGroupId) {
-    const csvFilePath = path.join(__dirname, 'resources', 'csv', 'bin_collection_dates.csv');
+    const csvFilePath = path.resolve(__dirname, '..', 'resources', 'csv', 'bin_collection_dates.csv');
     const rows = [];
 
     fs.createReadStream(csvFilePath)
