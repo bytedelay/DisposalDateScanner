@@ -40,7 +40,7 @@ function getBinMessage(boxColour, binType) {
 
 // Function to schedule reminders from CSV
 function scheduleBinReminders(client, targetGroupId) {
-    const csvFilePath = path.join(__dirname, 'resources', 'csv', 'bin_collection_dates.csv');
+    const csvFilePath = path.resolve(__dirname, '..', 'resources', 'csv', 'bin_collection_dates.csv');
     const rows = [];
 
     fs.createReadStream(csvFilePath)
